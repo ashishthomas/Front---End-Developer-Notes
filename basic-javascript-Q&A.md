@@ -66,3 +66,75 @@ var: Function-scoped, can be re-declared and updated, hoisted.
 let: Block-scoped, cannot be re-declared but can be updated, not initialized until the declaration is reached.
 const: Block-scoped, cannot be re-declared or updated, must be initialized at the time of declaration.
 </details>
+
+## 6. What is the difference between == and === in Javascript?
+
+<details> <summary> Answers </summary> 
+== is to check the type coercion (loose equaltiy)
+for example 5 == "5" --> true
+
+=== is to check for the strict equality (no type coercion)
+for example 5 === "5" --> false
+
+## 7. What is closure in JavaScript ?
+
+<details> <summary> Answers </summary>
+
+A clousre is a function that remembers outer scope, even after outer function has executed.
+
+for example:
+
+```javascript
+function outer() {
+  //this is the outer scope of the function
+  let count = 0;
+  return function inner() {
+    // this is the inner scope of the function
+    count++;
+    console.log(count);
+  };
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2
+```
+
+</details>
+
+## What are arrow functions? How do the differ from Regular functions?
+
+<details> <summary> Answers </summary> 
+Arrow functions (=>) are the concise syntax to write the functions
+
+differences:
+
+<ul> Do not have their own this, arguments, or super. </ul> 
+<ul> Cannot be used as constructors (cannot use new). </ul>
+
+```JavaScript
+const add = (a, b) => a + b; // Implicit return
+
+```
+
+</details>
+
+## What are the difference between null and undefined ?
+
+<details> <summary> Answers </summary>
+null: An assigned value indicating "no value"
+undefined: A variable that has been created which is not assigned
+</details>
+
+## what are template literals ?
+
+<details> <summary> Answers </summary> 
+template literals are the string literals  that allow embedded expresions. they are used backticks (` `).
+
+exmaple:
+
+```javascript
+const name = "Ashish";
+const greeting = `Hello, ${name}!`; // Output: Hello, Ashish!
+```
+
+</details>
